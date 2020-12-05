@@ -21,15 +21,22 @@ const ProcessLogsSchema = Joi.object().keys({
 // Primary Routes definition, can also expand from other routes
 const Routes = [{
   path: '/api/process-logs',
-  method: 'GET',
+  method: 'POST',
   config: {
     validate: {
       payload: ProcessLogsSchema,
+      options: {
+        allowUnknown: true,
+      },
     }
   },
   handler: async (request, h) => {
     try {
-        return h.response(await LogProcessor.processLogs);
+        const { logFiles, parallelFileProcessingCount } = request.payload;
+        return h.response(await LogProcessor.processLogs({
+          urls: logFiles,
+          maxParallelLimit: parallelFileProcessingCount,
+        }));
     }catch(err) {
       return err;
     }

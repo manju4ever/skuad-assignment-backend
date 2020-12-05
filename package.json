@@ -2,10 +2,11 @@
   "name": "skuad_assignment",
   "version": "1.0.0",
   "description": "API to process logs parallely",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "npx jest --color",
-    "watch": "npx nodemon -w src/index.js"
+    "watch": "npx nodemon -w",
+    "start": "node src/index.js"
   },
   "keywords": [],
   "author": "",
