@@ -1,0 +1,20 @@
+{
+  "name": "skuad_assignment",
+  "version": "1.0.0",
+  "description": "API to process logs parallely",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx jest --color",
+    "watch": "npx nodemon -w src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/hapi": "^20.0.3",
+    "@hapi/joi": "^17.1.1",
+    "async": "^3.2.0",
+    "axios": "^0.21.0",
+    "config": "^3.3.3"
+  }
+}
