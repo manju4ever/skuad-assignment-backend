@@ -56,7 +56,7 @@ class LogProcessor {
     // Step 3 - Lexically Sort the exceptions with their counts
     const finalResult = Object.keys(TIME_MAP_AVAILABLE).reduce((finalRes, eachIntervalDivision) => {
       const unique_exceptions = Array.from(new Set(TIME_MAP_AVAILABLE[eachIntervalDivision]));
-      const res_interim = unique_exceptions.map(exception => {
+      const res_interim = unique_exceptions.sort().map(exception => {
         return {
           name: exception,
           count: TIME_MAP_AVAILABLE[eachIntervalDivision].filter(type => type === exception).length,
