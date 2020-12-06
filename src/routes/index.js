@@ -5,10 +5,9 @@ const LogProcessor = require('../controllers/LogProcessor');
 const ProcessLogsSchema = Joi.object().keys({
   logFiles: 
       Joi.array()
-            .unique()
+            .items(Joi.string().uri())
             .min(1)
             .max(30)
-            .items(Joi.string().uri())
             .required(),
   parallelFileProcessingCount: 
       Joi.number()
@@ -20,7 +19,7 @@ const ProcessLogsSchema = Joi.object().keys({
 
 // Primary Routes definition, can also expand from other routes
 const Routes = [{
-  path: '/api/process-logs',
+  path: '/api/process-logs/',
   method: 'POST',
   config: {
     validate: {
