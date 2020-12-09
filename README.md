@@ -46,7 +46,7 @@
 ```
 
 ### Output Looks like
-![image](https://user-images.githubusercontent.com/9355984/101281634-20ff0b00-37f6-11eb-8784-903269ab35e4.png)
+![image](https://user-images.githubusercontent.com/9355984/101281847-8a334e00-37f7-11eb-9b8a-159f563b3cdf.png)
 
 #### Running tests
 * Run `npm test`
